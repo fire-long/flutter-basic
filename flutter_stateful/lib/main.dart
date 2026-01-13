@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stateful/ex_animated.dart';
+import 'package:flutter_stateful/ex_check.dart';
+import 'package:flutter_stateful/ex_onboarding.dart';
+import 'package:flutter_stateful/ex_radio.dart';
+import 'package:flutter_stateful/ex_switch.dart';
+import 'package:flutter_stateful/ex_toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: ExButton(),
+      home: ExOnboarding(),
     );
   }
 }

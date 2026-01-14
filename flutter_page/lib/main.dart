@@ -3,6 +3,7 @@ import 'package:flutter_page/screen/color_blue.dart';
 import 'package:flutter_page/screen/color_green.dart';
 import 'package:flutter_page/screen/color_page.dart';
 import 'package:flutter_page/screen/color_red.dart';
+import 'package:flutter_page/screen/ex_bottom.dart';
 import 'package:flutter_page/screen/ex_first.dart';
 import 'package:flutter_page/screen/login_page.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         "/blue": (_)=>ColorBlue(),
         "/green": (_)=>ColorGreen()
       },
-      home: LoginPage()
+      home: ExBottom()
     );
   }
 }

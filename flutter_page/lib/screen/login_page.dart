@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_page/screen/login_success_page.dart';
+
+TextEditingController idCon = TextEditingController();
+TextEditingController pwCon = TextEditingController();
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -13,11 +17,13 @@ class LoginPage extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: 'ID'),
               keyboardType: TextInputType.emailAddress,
+              controller: idCon,
             ),
             TextField(
               decoration: InputDecoration(labelText: 'PW'),
               keyboardType: TextInputType.text,
               obscureText: true,
+              controller: pwCon,
             ),
             SizedBox(height: 40.0),
             ButtonTheme(
@@ -32,8 +38,21 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   //id가 flutter, pw가 1234면
                   //login_success_page로 이동
-
-                  //아니면 snackbar로 틀렸다고 안내
+                  if (idCon.text == "flutter" && pwCon.text == "1234") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            LoginSuccessPage(text: idCon.text),
+                            //객체 생성한 거임
+                      ),
+                    );
+                  } else {
+                    //아니면 snackbar로 틀렸다고 안내
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("id 혹은 비밀번호 확인해주세요"))
+                    );
+                  }
                 },
               ),
             ),

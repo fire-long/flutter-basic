@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_listview/model/ryan_model.dart';
 import 'package:flutter_listview/screen/ryan_detail_page.dart';
 
 var ryanName = ['리틀 라이언', '반짝 라이언', '하트하트 라이언', '춘식이와의 만남', '룸메는 춘식이', '좋아요'];
@@ -24,13 +25,12 @@ class RyanList2 extends StatelessWidget {
           itemBuilder: (_, i) {
             return GestureDetector(
               onTap: () {
+                RyanModel rm = RyanModel(image: imgList[i], name: ryanName[i], index: i);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => RyanDetailPage(
-                      name: ryanName[i],
-                      image: imgList[i],
-                      index: i,
+                      rm: rm,
                     ),
                   ),
                 );

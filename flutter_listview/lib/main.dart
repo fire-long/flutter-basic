@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_listview/screen/basic_listview.dart';
+import 'package:flutter_listview/screen/ex_image.dart';
 import 'package:flutter_listview/screen/ryan_list.dart';
 import 'package:flutter_listview/screen/ryan_list2.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: RyanList2(),
+      home: ExImage(),
     );
   }
 }
